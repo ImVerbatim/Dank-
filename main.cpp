@@ -1,5 +1,5 @@
 #include "program.cpp"
-
+#include "SourceFile.cpp"
 
 struct Flags {
     std::string myPath;
@@ -34,6 +34,11 @@ int main(int argc, char* argv[]) {
     else if(flags.inFiles.size()>1) {
         std::cout << "Multiple sources files passed" << std::endl;
         std::cout << "For help, try -h for help" << std::endl;
+    }
+
+    else if(flags.inFiles.size() == 1) {
+        SourceFile sourceFile(flags.inFiles[0],false);
+        std::cout << sourceFile.getFileName();
     }
 
     //Program program;
