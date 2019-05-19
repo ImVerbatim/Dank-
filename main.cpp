@@ -38,7 +38,6 @@ int main(int argc, char* argv[]) {
 
     else if(flags.inFiles.size() == 1) {
         SourceFile sourceFile(flags.inFiles[0],false);
-        std::cout << sourceFile.getFileName();
     }
 
     //Program program;
