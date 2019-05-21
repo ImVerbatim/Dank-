@@ -15,6 +15,8 @@ int main(int argc, char* argv[]) {
 
     Flags flags=getFlags(argc, argv);
 
+    Program program;
+
     if (flags.help) {
         std::cout << "Dank++ " << VERSION_X << "." << VERSION_Y << "." << VERSION_Z << std::endl;
         std::cout << "Usage: ./a.out [options] [source file] [options]" << std::endl;
@@ -36,8 +38,10 @@ int main(int argc, char* argv[]) {
         std::cout << "For help, try -h for help" << std::endl;
     }
 
+
+    //TODO: Increase the level of inheritance
     else if(flags.inFiles.size() == 1) {
-        SourceFile sourceFile(flags.inFiles[0],false);
+        program.resolveProgram(flags.inFiles[0],false);
     }
 
     //Program program;

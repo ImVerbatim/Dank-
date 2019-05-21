@@ -1,35 +1,18 @@
 #include "h/program.h"
 
+Program::Program() {
+    
+}
 
-    void Program::setFileName(std::string aFileName) {
-        fileName = aFileName;
+void Program::cleanUp() {
+
+}
+
+
+void Program::resolveProgram(std::string inFile, bool printOut) {
+    try {
+        this->file=std::shared_ptr<SourceFile>(new SourceFile(inFile,printOut));
+    }catch(std::string err) {
+        std::cout << "Error: " << err << std::endl;
     }
-
-
-    std::string Program::getFileName() {
-        return fileName;
-    }
-
-    void Program::openFile() {
-        
-        if(fileName == "") {
-            throw noFileName;
-        }
-
-        std::string line;
-        std::fstream myfile;
-        myfile.open(fileName);
-
-        if(myfile.is_open()) {
-            while(getline(myfile,line)) {
-                for(int i = 0; i < line.size(); ++i) {
-                    std::cout << line[i] << ",";                        
-                    }
-                }
-        myfile.close();
-        }
-
-        else {
-            throw fileDoesNotExist;
-        }
-    }
+}
