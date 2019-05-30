@@ -1,3 +1,4 @@
 *vscode/
-
+!src/*.o
 a.out
+a.exe

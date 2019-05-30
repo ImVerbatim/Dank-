@@ -1,6 +1,6 @@
-#include "program.cpp"
-#include "SourceFile.cpp"
+#include "../h/program.h"
 
+#include <iostream>
 struct Flags {
     std::string myPath;
     std::vector<std::string> inFiles;   
@@ -44,8 +44,6 @@ int main(int argc, char* argv[]) {
         program.resolveProgram(flags.inFiles[0],false);
     }
 
-    //Program program;
-    NoFileName noFileName;
     
     /*
     if (argv[1] == NULL){

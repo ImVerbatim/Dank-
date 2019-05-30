@@ -1,8 +1,8 @@
 #include <fstream>
 #include <sstream>
-#include <string>
 #include <iostream>
 
+#include "../h/sourceFileUtils.h"
 
 void loadFile(std::string filePath, std::string& contents) {
     
@@ -10,7 +10,7 @@ void loadFile(std::string filePath, std::string& contents) {
     inFile.open(filePath);
 
     if(!inFile.is_open()){
-        std::cout << "Cannot open file" << std::endl;         
+        throw "could not open " + filePath;
     }
     else {
         std::stringstream strStream;

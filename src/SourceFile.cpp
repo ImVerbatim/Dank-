@@ -1,8 +1,6 @@
-#include "../h/SourceFile.h"
-#include "../h/exceptions.h"
-#include "sourceFileUtils.cpp"
-
-#include <iostream>
+#include "../h/sourceFile.h"
+#include "../h/sourceFileUtils.h"
+#include "../h/errorHandle.h"
 
 SourceFile::SourceFile(std::string fileNameIn,bool printOutput) {
     fileName = fileNameIn;
@@ -11,7 +9,7 @@ SourceFile::SourceFile(std::string fileNameIn,bool printOutput) {
         contents+="\n";
     }
     catch(std::string err) {
-        std::cout << "Error: " << err << std::endl;
+        throw DankErrors(err, SOURCE_ERROR);
     }
 }
 

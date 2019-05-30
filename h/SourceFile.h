@@ -1,5 +1,5 @@
-#ifndef SOURCEFILE_H
-#define SOURCEFILE_H
+#pragma once
+
 
 #include <string>
 
@@ -24,5 +24,3 @@ class SourceFile
         std::string contents;
 };
 
-
-#endif

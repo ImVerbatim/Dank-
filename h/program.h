@@ -1,5 +1,4 @@
-#ifndef PROGRAM_H
-#define PROGRAM_H
+#pragma once
 
 #include <string>
 #include <fstream>
@@ -9,14 +8,13 @@
 #include <memory>
 
 #include "../h/VERSION.h"
-#include "../h/exceptions.h"
 #include "SourceFile.h"
 
 class Program {
     public:
         Program();
         ~Program() { cleanUp(); };
-        void resolveProgram(std::string, bool);
+        void resolveProgram(std::string inFile, bool printOut);
 
     private:
 
@@ -29,5 +27,3 @@ class Program {
         std::shared_ptr<SourceFile> file = nullptr;
 };
 
-
-#endif
